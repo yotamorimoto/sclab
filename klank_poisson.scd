@@ -1,3 +1,4 @@
+s.boot;
 (
 p = Ppoisson(4,inf).asStream;
 f = {
