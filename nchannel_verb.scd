@@ -1,12 +1,12 @@
 // multichannel reverb
 // n = number of output
-n = 10;
+n = 30;
 s.options.numOutputBusChannels = n;
 s.reboot;
 (
 SynthDef(\verb ++ n, { |decay=3, feedback=0.9|
 	var sig, fbk;
-	sig = In.ar(\bus.ir, n);
+	sig = In.ar(0, n);
 	sig = OnePole.ar(sig, 0.72);
 	sig = AllpassC.ar(sig, 0.3, LFNoise1.kr(1).range(0.3,0.29), 3);
 	fbk = LocalIn.ar(n);
@@ -21,7 +21,7 @@ SynthDef(\verb ++ n, { |decay=3, feedback=0.9|
 // test
 (
 // force n-channel into stereo for monitoring
-{ ReplaceOut.ar(0, Splay.ar(In.ar(0, n))) }.play(s,addAction:'addToTail');
+Synth.tail(s, \verb ++ n, [feedback: 0.8]);
 r {
 	loop {
 		{
@@ -33,6 +33,5 @@ r {
 		0.1.exprand(3).wait;
 	}
 }.play;
+{ ReplaceOut.ar(0, Splay.ar(In.ar(0, n))) }.play(s,addAction:'addToTail');
 )
-// add
-Synth.tail(s, \verb ++ n, [feedback: 0.7]);
