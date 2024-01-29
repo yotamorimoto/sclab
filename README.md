@@ -1,6 +1,5 @@
 # supercollider lab.
 
-Hi. it's a repo for supercollider code accompanying my yt videos.
+Hi. this is a repo of supercollider code accompanying my youtube videos.
 
-the video playlist: 
-[https://www.youtube.com/playlist?list=PLvN9ljUgCOLhx2pYozud7rTaZOddwtgMK]
+the video [playlist](https://www.youtube.com/playlist?list=PLvN9ljUgCOLhx2pYozud7rTaZOddwtgMK)
