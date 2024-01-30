@@ -3,7 +3,7 @@
 ~freq = 400;
 ~just = [9/8, 5/4, 4/3, 3/2, 5/3, 15/8, 2];
 s.waitForBoot {
-	w = Window.new(bounds: 256@256);
+	w = Window.new;
 	w.bounds_(Rect(256,256,256,256));
 	b = Buffer.alloc(s, 2048, 2);
 	s.sync;
