@@ -1,0 +1,49 @@
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
+  video {
+    object-fit: fill;
+    position: fixed; z-index: -5;
+  }
+</style>
+<video id='video' muted playsinline autoplay width='100%' height='100%'></video>
+<script type='text/javascript'>
+  const video = document.getElementById('video')
+  const list = [
+    "Pexels Videos 3641.mp4",
+    "Pexels Videos 4708.mp4",
+    "Pexels Videos 1321208.mp4",
+    "Pexels Videos 1390942.mp4",
+    "Pexels Videos 1409899.mp4",
+    "Pexels Videos 1448735.mp4",
+    "Pexels Videos 1564582.mp4",
+    "Pexels Videos 1739010.mp4",
+    "Pexels Videos 2034291.mp4",
+    "Pexels Videos 2053855.mp4",
+    "Pexels Videos 2063228.mp4",
+    "Pexels Videos 2330708.mp4",
+    "Pexels Videos 2711145.mp4",
+    "Pexels Videos 2818546.mp4",
+    "production\ ID_3783818.mp4",
+    "production\ ID_3784197.mp4",
+    "production\ ID_4169986.mp4",
+    "production\ ID_4193127.mp4",
+    "production\ ID_4287971.mp4",
+    "video-2.mp4",
+    "video-3.mp4",
+    "video-5.mp4",
+    "video.mp4",
+    "Milky\ Way\ Glowing\ At\ Night.mp4",
+    "Time Lapse Video Of Milky Way Galaxy.mp4",
+    "Time Lapse Video Of Night Sky.mp4",
+    "Pexels\ Videos\ 2772930.mp4",
+    "Pexels Videos 2815411.mp4",
+  ]
+  const choose = array => array[Math.floor(Math.random() * array.length)]
+  video.oncanplay = () => video.play()
+  video.onended = function() { video.src = choose(list) }
+  video.src = choose(list)
+</script>
