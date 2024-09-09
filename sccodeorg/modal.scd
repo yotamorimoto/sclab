@@ -3,9 +3,9 @@
 SynthDef(\bell, {
 	|fs=1, t60=1, pitchy=1, amp=0.25, gate=1|
 	var sig, exciter;
-	// exciter = Impulse.ar(0);
-	exciter = PinkNoise.ar * EnvGen.ar(Env.perc(0.001, 0.05), gate) * 0.25;
-	// exciter = WhiteNoise.ar() * EnvGen.ar(Env.perc(0.001, 0.05), gate) * 0.25;
+	// exciter = Impulse.ar(0,0,0.1);
+	exciter = PinkNoise.ar * EnvGen.ar(Env.perc(0.001, 0.05), gate) * 0.05;
+	// exciter = WhiteNoise.ar() * EnvGen.ar(Env.perc(0.001, 0.05), gate) * 0.05;
 	sig = Klank.ar(
 		`[
 			[1, 2, 2.803, 3.871, 5.074, 7.81, 10.948, 14.421],   // freqs

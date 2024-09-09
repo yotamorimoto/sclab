@@ -55,6 +55,7 @@ SynthDef(\paulstretchMono, { |out = 0, bufnum, envBufnum, pan = 0, stretch = 50,
 ({
 	var envBuf, envSignal, buffer;
 	buffer = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav");
+	// buffer = Buffer.read(s, "/Users/yota/Music/lab_hearingX/convolution_mat/vdg.wav");
 	// The grain envelope
 	envBuf = Buffer.alloc(s, s.sampleRate, 1);
 	envSignal = Signal.newClear(s.sampleRate).waveFill({|x| (1 - x.pow(2)).pow(1.25)}, -1.0, 1.0);
